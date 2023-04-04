@@ -105,6 +105,10 @@ const Story = () => {
   const tl = useRef();
 
   useIsomorphicLayoutEffect(() => {
+    gsap.set(".img2", {
+      scale: 0.2,
+      opacity: 0,
+    });
     gsap
       .timeline({
         scrollTrigger: {
@@ -115,9 +119,9 @@ const Story = () => {
           nd: "+=2000px",
         },
       })
-      .from(".img2", {
-        scale: 0.2,
-        opacity: 0,
+      .to(".img2", {
+        scale: 1,
+        opacity: 1,
         ease: "Expo.easeOut",
         duration: 2,
       })
@@ -146,10 +150,12 @@ const Story = () => {
       .to(".staticTxt ", {
         opacity: 0,
         stagger: 0.3,
+        duration: 4,
       })
       .to(".animatedTxt ", {
         opacity: 1,
         stagger: 0.3,
+        duration: 4,
       });
   }, []);
 
