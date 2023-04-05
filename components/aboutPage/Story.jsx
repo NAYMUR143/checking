@@ -109,6 +109,18 @@ const Story = () => {
       scale: 0.2,
       opacity: 0,
     });
+    gsap.set(".img2line", {
+      scaleX: 0.2,
+      opacity: 0,
+    });
+    gsap.set(".img3", {
+      scale: 0.2,
+      opacity: 0,
+    });
+    gsap.set(".img3line", {
+      scaleX: 0.2,
+      opacity: 0,
+    });
     gsap
       .timeline({
         scrollTrigger: {
@@ -125,37 +137,35 @@ const Story = () => {
         ease: "Expo.easeOut",
         duration: 2,
       })
-      .from(".img2line", {
-        width: 0,
+      .to(".img2line", {
         ease: "Expo.easeOut",
         duration: 2,
-        opacity: 0,
-        stagger: 0.3,
+        scaleX: 1,
+        opacity: 1,
+        stagger: 0.5,
       })
-
-      .from(".img3", {
-        scale: 0.2,
-        opacity: 0,
+      .to(".img3", {
+        scale: 1,
+        opacity: 1,
+        ease: "Expo.easeOut",
         stagger: 0.6,
         ease: "expo.out",
         duration: 2,
       })
-      .from(".img3line", {
-        width: 0,
+      .to(".img3line", {
         ease: "Expo.easeOut",
         duration: 2,
-        opacity: 0,
-        stagger: 0.3,
+        scaleX: 1,
+        opacity: 1,
+        stagger: 0.5,
       })
       .to(".staticTxt ", {
         opacity: 0,
-        stagger: 0.3,
-        duration: 4,
+        stagger: 0.5,
       })
       .to(".animatedTxt ", {
         opacity: 1,
-        stagger: 0.3,
-        duration: 4,
+        stagger: 0.5,
       });
   }, []);
 
